@@ -1,0 +1,11 @@
+[{
+	"__metadata": {
+		"id": "https://uytclnt928:443/sap/opu/odata/sap/PS_NETWORK_GRAPH_SRV/I_ProjectWithCodingMaskVH('MKTESTPROJ_01')",
+		"uri": "https://uytclnt928:443/sap/opu/odata/sap/PS_NETWORK_GRAPH_SRV/I_ProjectWithCodingMaskVH('MKTESTPROJ_01')",
+		"type": "PS_NETWORK_GRAPH_SRV.I_ProjectWithCodingMaskVHType"
+	},
+	"Project": "MKTESTPROJ_01",
+	"ProjectDescription": "MKTESTPROJ_01",
+	"ResponsiblePerson": "00000000",
+	"ResponsiblePersonName": ""
+}]

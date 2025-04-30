@@ -1,0 +1,295 @@
+<mvc:View controllerName="com.odata.odata.controller.Detail" xmlns="sap.uxap" xmlns:m="sap.m" xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle navButtonPress="onNavBack">
+				<expandedHeading>
+					<m:Title text="Operation {selectedOperation>/MaintenanceOrderOperation}" wrapping="true"/>
+				</expandedHeading>
+				<snappedHeading>
+					<m:Title text="Operation {selectedOperation>/MaintenanceOrderOperation}" wrapping="true"/>
+				</snappedHeading>
+				<actions>
+					<m:Button text="Close" type="Transparent" press="onCloseDetailPress"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="Maintenance Order"/>
+					<m:Text text="{selectedOperation>/MaintenanceOrder}" class="sapUiSmallMarginTop"/>
+				</m:VBox>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="Operation Number"/>
+					<m:Text text="{selectedOperation>/MaintenanceOrderOperation}" class="sapUiSmallMarginTop"/>
+				</m:VBox>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="Description"/>
+					<m:Text text="{selectedOperation>/OperationDescription}" class="sapUiSmallMarginTop"/>
+				</m:VBox>
+			</m:FlexBox>
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="Network Activity">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0"
+								emptySpanM="0" columnsL="1" columnsM="1">
+								<form:content>
+									<m:Label text="ControllingArea"/>
+									<m:Text text="{selectedOperation>/ControllingArea}"/>
+									<m:Label text="SystemStatusText"/>
+									<m:Text text="{selectedOperation>/SystemStatusText}"/>
+									<m:Label text="WorkCenter"/>
+									<m:Text text="{selectedOperation>/WorkCenter}"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="General Information">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0"
+								emptySpanM="0" columnsL="1" columnsM="1">
+								<form:content>
+									<m:Label text="ControllingArear"/>
+									<m:Text text="{selectedOperation>/ControllingArea}"/>
+									<m:Label text="SystemStatusText"/>
+									<m:Text text="{selectedOperation>/SystemStatusText}"/>
+									<m:Label text="WorkCenter"/>
+									<m:Text text="{selectedOperation>/WorkCenter}"/>
+									<m:Label text="OperationWorkCenterTypeCode"/>
+									<m:Text text="{selectedOperation>/OperationWorkCenterTypeCode}"/>
+									<m:Label text="Description"/>
+									<m:Text text="{selectedOperation>/MaintOrderConfirmation}"/>
+									<m:Label text="Operation"/>
+									<m:Text text="{selectedOperation>/MaintenanceOrderRoutingNode}"/>
+									<m:Label text="ActualWorkQuantity"/>
+									<m:Text text="{selectedOperation>/ActualWorkQuantity}"/>
+									<m:Label text="MaintOrderConfirmation"/>
+									<m:Text text="{selectedOperation>/MaintOrderConfirmation}"/>
+									<m:Label text="MaintenanceOrderRoutingNode"/>
+									<m:Text text="{selectedOperation>/MaintenanceOrderRoutingNode}"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>
+<!--<mvc:View-->
+<!--    controllerName="com.odata.odata.controller.Detail"-->
+<!--    xmlns:mvc="sap.ui.core.mvc"-->
+<!--    xmlns="sap.m">-->
+<!--  <Page title="Detail">-->
+<!--    <content>-->
+<!--      <VBox class="sapUiSmallMargin">-->
+<!--      	<Button text="check" press="onpress"/>-->
+<!--        <Label text="Maintenance Order"/>-->
+<!--        <Text text="{networkActivity>/MaintenanceOrder}" />-->
+<!--        <Label text="Operation Number"/>-->
+<!--        <Text text="{networkActivity>/MaintenanceOrderOperation}" />-->
+<!--      </VBox>-->
+<!--    </content>-->
+<!--  </Page>-->
+<!--</mvc:View>-->
+<!--<mvc:View-->
+<!--	controllerName="com.odata.odata.controller.Detail"-->
+<!--	xmlns="sap.uxap"-->
+<!--	xmlns:m="sap.m"-->
+<!--	xmlns:f="sap.f"-->
+<!--	xmlns:form="sap.ui.layout.form"-->
+<!--	xmlns:mvc="sap.ui.core.mvc">-->
+<!--	<ObjectPageLayout-->
+<!--		id="ObjectPageLayout"-->
+<!--		showTitleInHeaderContent="true"-->
+<!--		alwaysShowContentHeader="false"-->
+<!--		preserveHeaderStateOnScroll="false"-->
+<!--		headerContentPinnable="true"-->
+<!--		isChildPage="true"-->
+<!--		upperCaseAnchorBar="false"  >-->
+<!--		<headerTitle >-->
+<!--			<ObjectPageDynamicHeaderTitle  showNavButton="true"  navButtonPress="onNavBack">-->
+<!--				<actions>-->
+<!--					<m:ToggleButton-->
+<!--						text="Edit"-->
+<!--						type="Emphasized" press="onEdit"/>-->
+<!--					<m:Button-->
+<!--						text="Delete"-->
+<!--						type="Transparent"/>-->
+<!--					<m:Button-->
+<!--						text="Copy"-->
+<!--						type="Transparent"/>-->
+<!--					<m:Button-->
+<!--						icon="sap-icon://action"-->
+<!--						type="Transparent"/>-->
+<!--				</actions>-->
+<!--			</ObjectPageDynamicHeaderTitle>-->
+<!--		</headerTitle>-->
+<!--		<headerContent>-->
+<!--			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">-->
+<!--				<m:VBox justifyContent="Start" class="sapUiSmallMarginEnd">-->
+<!--					<m:Label text="Control Key"/>-->
+<!--					<m:Text text="{networkActivity>/ControlKey}"/>-->
+<!--				</m:VBox>-->
+<!--				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">-->
+<!--					<m:Label text="Plant Name"/>-->
+<!--					<m:Text text="{networkActivity>/PlantName}"/>-->
+<!--				</m:VBox>-->
+<!--				<m:VBox justifyContent="End" class="sapUiSmallMarginEnd">-->
+<!--					<m:Label text="Status"/>-->
+<!--					<m:Text text="{networkActivity>/Status}"/>-->
+<!--				</m:VBox>-->
+<!--			</m:FlexBox>-->
+<!--		</headerContent>-->
+<!--		<sections>-->
+<!--			<ObjectPageSection title="General Information">-->
+<!--				<subSections>-->
+<!--					<ObjectPageSubSection>-->
+<!--						<blocks>-->
+<!--							<m:Panel expandable="true" expanded="true">-->
+<!--								<m:VBox>-->
+<!--									<form:SimpleForm layout="ResponsiveGridLayout">-->
+<!--										<form:content>-->
+<!--											<m:Label text="Activity Type"/>-->
+<!--											<m:Text text="{networkActivity>/ActivityType}"/>-->
+<!--											<m:Label text="Control Key"/>-->
+<!--											<m:Text text="{networkActivity>/ControlKey}"/>-->
+<!--											<m:Label text="Work Center"/>-->
+<!--											<m:Text text="{networkActivity>/WorkCenter}"/>-->
+<!--											<m:Label text="Network"/>-->
+<!--											<m:Text text="{networkActivity>/Network}"/>-->
+<!--											<m:Label text="Network Type"/>-->
+<!--											<m:Text text="{networkActivity>/NetworkType}"/>-->
+<!--											<m:Label text="WBS Element"/>-->
+<!--											<m:Text text="{networkActivity>/WBSElement}"/>-->
+<!--										</form:content>-->
+<!--									</form:SimpleForm>-->
+<!--								</m:VBox>-->
+<!--							</m:Panel>-->
+<!--						</blocks>-->
+<!--					</ObjectPageSubSection>-->
+<!--				</subSections>-->
+<!--			</ObjectPageSection>-->
+<!--			<ObjectPageSection title="Activity Dates">-->
+<!--				<subSections>-->
+<!--					<ObjectPageSubSection>-->
+<!--						<blocks>-->
+<!--							<m:Panel expandable="true" expanded="false">-->
+<!--								<m:VBox>-->
+<!--									<form:SimpleForm layout="ResponsiveGridLayout">-->
+<!--										<form:content>-->
+<!--											<m:Label text="Earliest Start"/>-->
+<!--											<m:Text text="{networkActivity>/EarliestStart}"/>-->
+<!--											<m:Label text="Latest Start"/>-->
+<!--											<m:Text text="{networkActivity>/LatestStart}"/>-->
+<!--										</form:content>-->
+<!--									</form:SimpleForm>-->
+<!--								</m:VBox>-->
+<!--							</m:Panel>-->
+<!--						</blocks>-->
+<!--					</ObjectPageSubSection>-->
+<!--				</subSections>-->
+<!--			</ObjectPageSection>-->
+<!--			<ObjectPageSection title="Constraints">-->
+<!--				<subSections>-->
+<!--					<ObjectPageSubSection>-->
+<!--						<blocks>-->
+<!--							<m:Panel expandable="true" expanded="false">-->
+<!--								<m:VBox>-->
+<!--									<form:SimpleForm layout="ResponsiveGridLayout">-->
+<!--										<form:content>-->
+<!--											<m:Label text="Constraint Type"/>-->
+<!--											<m:Text text="{networkActivity>/ConstraintType}"/>-->
+<!--										</form:content>-->
+<!--									</form:SimpleForm>-->
+<!--								</m:VBox>-->
+<!--							</m:Panel>-->
+<!--						</blocks>-->
+<!--					</ObjectPageSubSection>-->
+<!--				</subSections>-->
+<!--			</ObjectPageSection>-->
+<!--			<ObjectPageSection title="Status">-->
+<!--				<subSections>-->
+<!--					<ObjectPageSubSection>-->
+<!--						<blocks>-->
+<!--							<m:Panel expandable="true" expanded="false">-->
+<!--								<m:VBox>-->
+<!--									<form:SimpleForm layout="ResponsiveGridLayout">-->
+<!--										<form:content>-->
+<!--											<m:Label text="System Status"/>-->
+<!--											<m:Text text="{networkActivity>/SystemStatus}"/>-->
+<!--											<m:Label text="User Status"/>-->
+<!--											<m:Text text="{networkActivity>/UserStatus}"/>-->
+<!--											<m:Label text="Technical Status"/>-->
+<!--											<m:Text text="CRTD DLFL REL SETC"/>-->
+<!--										</form:content>-->
+<!--									</form:SimpleForm>-->
+<!--								</m:VBox>-->
+<!--							</m:Panel>-->
+<!--						</blocks>-->
+<!--					</ObjectPageSubSection>-->
+<!--				</subSections>-->
+<!--			</ObjectPageSection>-->
+<!--			<ObjectPageSection title="User Fields">-->
+<!--				<subSections>-->
+<!--					<ObjectPageSubSection>-->
+<!--						<blocks>-->
+<!--							<m:Panel expandable="true" expanded="false">-->
+<!--								<m:VBox>-->
+<!--									<form:SimpleForm layout="ResponsiveGridLayout">-->
+<!--										<form:content>-->
+<!--											 Add user fields content here -->
+<!--										</form:content>-->
+<!--									</form:SimpleForm>-->
+<!--								</m:VBox>-->
+<!--							</m:Panel>-->
+<!--						</blocks>-->
+<!--					</ObjectPageSubSection>-->
+<!--				</subSections>-->
+<!--			</ObjectPageSection>-->
+<!--			<ObjectPageSection title="Predecessor/Successor">-->
+<!--				<subSections>-->
+<!--					<ObjectPageSubSection>-->
+<!--						<blocks>-->
+<!--							<m:Panel expandable="true" expanded="false">-->
+<!--								<m:VBox>-->
+<!--									<form:SimpleForm layout="ResponsiveGridLayout">-->
+<!--										<form:content>-->
+<!--											 Add predecessor/successor content here -->
+<!--										</form:content>-->
+<!--									</form:SimpleForm>-->
+<!--								</m:VBox>-->
+<!--							</m:Panel>-->
+<!--						</blocks>-->
+<!--					</ObjectPageSubSection>-->
+<!--				</subSections>-->
+<!--			</ObjectPageSection>-->
+<!--			<ObjectPageSection title="Assigned Objects">-->
+<!--				<subSections>-->
+<!--					<ObjectPageSubSection>-->
+<!--						<blocks>-->
+<!--							<m:Panel expandable="true" expanded="false">-->
+<!--								<m:VBox>-->
+<!--									<form:SimpleForm layout="ResponsiveGridLayout">-->
+<!--										<form:content>-->
+<!--											 Add assigned objects content here -->
+<!--										</form:content>-->
+<!--									</form:SimpleForm>-->
+<!--								</m:VBox>-->
+<!--							</m:Panel>-->
+<!--						</blocks>-->
+<!--					</ObjectPageSubSection>-->
+<!--				</subSections>-->
+<!--			</ObjectPageSection>-->
+<!--		</sections>-->
+<!--	</ObjectPageLayout>-->
+<!--</mvc:View>-->

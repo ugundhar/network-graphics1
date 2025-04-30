@@ -1,0 +1,28 @@
+[{
+	"__metadata": {
+		"id": "https://uytclnt928:443/sap/opu/odata/sap/PS_NETWORK_GRAPH_SRV/I_ProjectNtwkActGroupingVH(Language='EN',DomainValue='NON')",
+		"uri": "https://uytclnt928:443/sap/opu/odata/sap/PS_NETWORK_GRAPH_SRV/I_ProjectNtwkActGroupingVH(Language='EN',DomainValue='NON')",
+		"type": "PS_NETWORK_GRAPH_SRV.I_ProjectNtwkActGroupingVHType"
+	},
+	"Language": "EN",
+	"DomainValue": "NON",
+	"DomainValueName": "No Grouping"
+}, {
+	"__metadata": {
+		"id": "https://uytclnt928:443/sap/opu/odata/sap/PS_NETWORK_GRAPH_SRV/I_ProjectNtwkActGroupingVH(Language='EN',DomainValue='NTW')",
+		"uri": "https://uytclnt928:443/sap/opu/odata/sap/PS_NETWORK_GRAPH_SRV/I_ProjectNtwkActGroupingVH(Language='EN',DomainValue='NTW')",
+		"type": "PS_NETWORK_GRAPH_SRV.I_ProjectNtwkActGroupingVHType"
+	},
+	"Language": "EN",
+	"DomainValue": "NTW",
+	"DomainValueName": "Group by Network"
+}, {
+	"__metadata": {
+		"id": "https://uytclnt928:443/sap/opu/odata/sap/PS_NETWORK_GRAPH_SRV/I_ProjectNtwkActGroupingVH(Language='EN',DomainValue='WBS')",
+		"uri": "https://uytclnt928:443/sap/opu/odata/sap/PS_NETWORK_GRAPH_SRV/I_ProjectNtwkActGroupingVH(Language='EN',DomainValue='WBS')",
+		"type": "PS_NETWORK_GRAPH_SRV.I_ProjectNtwkActGroupingVHType"
+	},
+	"Language": "EN",
+	"DomainValue": "WBS",
+	"DomainValueName": "Group by WBS Element"
+}]

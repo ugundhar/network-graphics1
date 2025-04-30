@@ -1,0 +1,47 @@
+trigger:
+    branches:
+        include:
+            - main
+            - main-op
+            - main-s4op2023-fsp
+            - s4op-*
+            - fix-*
+            - feature-*
+        exclude:
+            - config/services
+    batch: true
+    paths:
+        include:
+            - '*'
+pr:
+    branches:
+        include:
+            - main
+            - main-op
+            - main-s4op2023-fsp
+            - s4op-*
+            - fix-*
+            - feature-*
+        exclude:
+            - config/services
+parameters:
+    - name: executionMode
+      displayName: Execution Mode
+      type: string
+      default: ci
+      values:
+        - ci
+        - quality
+        - translationdownload
+        - securityrescan
+resources:
+    repositories:
+        - repository: fiori-pipeline-azure
+          endpoint: github.tools.sap
+          type: githubenterprise
+          name: FIORI-PIPELINE/fiori-pipeline-azure
+extends:
+    template: fiori-pipeline.yml@fiori-pipeline-azure
+    parameters:
+        executionmode: ${{ parameters.executionMode }}
+        pool: s4-fiori-core

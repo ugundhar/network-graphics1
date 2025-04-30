@@ -1,0 +1,97 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.f">
+	<NavContainer id="activitySidePane"  width="100%">
+		<f:DynamicPage id="activityPage">
+			<f:title>
+				<f:DynamicPageTitle id="dynamicPageTitle">
+					<f:heading>
+						<VBox id="titleVBox">
+							<Title text="hello world"/>
+						</VBox>
+					</f:heading>
+				</f:DynamicPageTitle>
+			</f:title>
+			<f:header>
+				<f:DynamicPageHeader>
+					<Text text="Hello from the fragment-based DynamicPage!"/>
+				</f:DynamicPageHeader>
+			</f:header>
+			<f:content>
+				<VBox class="sapUiSmallMargin">
+					<Text text="Maintenance Order: {activityModel>/MaintenanceOrder}"/>
+					<Text text="Operation: {activityModel>/attributes/0/value}"/>
+					<!-- etc. -->
+				</VBox>
+			</f:content>
+		</f:DynamicPage>
+	</NavContainer>
+</core:FragmentDefinition>
+
+
+
+<!--<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">-->
+<!--<NavContainer id="activitySidePane" width="100%">-->
+<!--	<f:DynamicPage id="activityPage">-->
+<!--		<f:title>-->
+<!--			<f:DynamicPageTitle id="dynamicPageTitle">-->
+<!--				<f:heading>-->
+<!--					<VBox id="titleVBox">-->
+<!--						<Title id="dynamicPageTitleActivity" text="Welcome to network graphics"/>-->
+<!--					</VBox>-->
+<!--				</f:heading>-->
+<!--				<f:actions>-->
+<!--					<Button id="activityCloseButton" tooltip="{i18n>CloseButtonTooltip}" icon="sap-icon://decline" press="closeSidePane('_removeNodeSelection')" -->
+<!--						type="Transparent"/>-->
+<!--				</f:actions>-->
+<!--			</f:DynamicPageTitle>-->
+<!--		</f:title>-->
+<!--		<f:header>-->
+<!--			<f:DynamicPageHeader pinnable="true" id="dynamicPageHeader">-->
+<!--				<VBox id="activityHeaderVBox" backgroundDesign="Solid">-->
+<!--					<OverflowToolbar id="activityOverflowToolbar" style="Clear" design="Transparent">-->
+<!--						<Link id="activityNetworkLink"-->
+<!--							text="{parts: ['i18n>HeaderTemplate', 'NetworkActivityDescription', 'NetworkActivity'], formatter: 'formatMessage'}"-->
+<!--							press="onElementLinkPress" visible="{= !!${NetworkActivityElement}}"/>-->
+<!--						<smartField:SmartField editable="false" contextEditable="false" id="networkActivityField" value="{NetworkActivity}"-->
+<!--							visible="{= !${NetworkActivityElement}}">-->
+<!--							<smartField:semanticObjectController>-->
+<!--								<navp:SemanticObjectController id="networkActivityFieldLink" beforePopoverOpens="onBeforePopoverOpens"/>-->
+<!--							</smartField:semanticObjectController>-->
+<!--						</smartField:SmartField>-->
+<!--						<ToolbarSpacer id="activityToolbarSpacer"/>-->
+<!--					</OverflowToolbar>-->
+<!--					<HBox id="activityMainPropertiesHBox" class="sapUiContentPadding">-->
+<!--						<VBox id="controlKeyActivityHeaderBox" class="sapUiSmallMarginEnd" width="50%">-->
+<!--							<Label id="controlKeyActivityHeaderLabel" labelFor="controlKeyActivityHeader" text="{i18n>ControlKeyActivityHeaderLabel}"/>-->
+<!--							<smartField:SmartField editable="false" contextEditable="false" id="controlKeyActivityHeader" value="{NetworkActivityControlProfile}"/>-->
+<!--						</VBox>-->
+<!--						<VBox id="plantBox" class="sapUiSmallMarginEnd" width="50%">-->
+<!--							<Label id="plantLabel" labelFor="plant" text="{i18n>PlantHeaderLabel}"/>-->
+<!--							<Text id="plant" text="{= ${PlantName} || ${i18n>EmptyValueText}}"/>-->
+<!--						</VBox>-->
+<!--						<VBox id="activityStatusBox" width="50%">-->
+<!--							<Label id="statusLabel" labelFor="status" text="{i18n>StatusLabel}"/>-->
+<!--							<ObjectStatus id="status" text="{parts: ['ObjectIsConfirmed', 'ObjectIsPartiallyConfirmed'], formatter: '.formatter.getStatusText'}"-->
+<!--								icon="{parts: ['ObjectIsConfirmed', 'ObjectIsPartiallyConfirmed'], formatter: '.formatter.getStatusIcon'}"/>-->
+<!--						</VBox>-->
+<!--					</HBox>-->
+<!--				</VBox>-->
+<!--			</f:DynamicPageHeader>-->
+<!--		</f:header>-->
+<!--	</f:DynamicPage>-->
+<!--</NavContainer>-->
+<!--	<Dialog id="activityDialog" title="Operation Details" stretch="true" state="None">-->
+<!--		<content>-->
+<!--			<VBox class="sapUiSmallMargin">-->
+<!--				<Title text="Maintenance Order: {activityModel>/MaintenanceOrder}" level="H3"/>-->
+<!--				<Text text="Operations: {activityModel>/attributes/0/value}"/>-->
+<!--				<Text text="Status Text: {activityModel>/attributes/1/value}"/>-->
+<!--				<Text text="Currency Code: {activityModel>/attributes/2/value}"/>-->
+<!--				<Text text="Work Center: {activityModel>/attributes/3/value}"/>-->
+<!--				<Text text="Operation Description: {activityModel>/attributes/4/value}"/>-->
+<!--			</VBox>-->
+<!--		</content>-->
+<!--		<beginButton>-->
+<!--			<Button text="Close" press=".onCloseActivityDialog"/>-->
+<!--		</beginButton>-->
+<!--	</Dialog>-->
+<!--</core:FragmentDefinition>-->

@@ -1,0 +1,90 @@
+
+
+<!--multiple order with -->
+
+
+
+<mvc:View controllerName="com.odata.odata.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:graph="sap.suite.ui.commons.networkgraph" xmlns:core="sap.ui.core">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}" titleAlignment="Center">
+					<content>
+						<HBox alignItems="Center" class="sapUiSmallMargin">
+							<Title text="Maintenance Orders: "/>
+							<Input id="orderInput" placeholder="Enter Order Numbers (comma separated)" width="300px" class="sapUiSmallMarginEnd" value="1015751,1018733"/>
+							<Button text="Go" press=".onGetMultipleOrders" type="Emphasized"/>
+						</HBox>
+						
+						<!-- Filters Toolbar -->
+						<Toolbar class="sapUiSmallMargin">
+							<!-- Date View ComboBox -->
+							<Label text="Date View:" class="sapUiSmallMarginEnd"/>
+							<ComboBox id="dateViewComboBox" width="200px" change=".onDateViewComboBoxChange" class="sapUiSmallMarginEnd">
+								<core:Item key="BASIC" text="Basic Dates View"/>
+								<core:Item key="ACTUAL" text="Actual Dates View"/>
+								<core:Item key="FORECAST" text="Forecast Dates View"/>
+								<core:Item key="PLAN_ACTUAL" text="Plan-Actual Comparison"/>
+							</ComboBox>
+							
+							<!-- Grouping ComboBox -->
+							<ToolbarSpacer/>
+							<Label text="Grouping:" class="sapUiSmallMarginEnd"/>
+							<ComboBox id="groupComboBox" width="200px" change=".onGroupComboBoxChange" class="sapUiSmallMarginEnd">
+								<core:Item key="NONE" text="No Grouping"/>
+								<core:Item key="NETWORK" text="Group by Network"/>
+								<core:Item key="WBS" text="Group by WBS Element"/>
+							</ComboBox>
+							
+							<!-- Highlighting ComboBox -->
+							<ToolbarSpacer/>
+							<Label text="Highlighting:" class="sapUiSmallMarginEnd"/>
+							<ComboBox id="highlightComboBox" width="240px" change=".onHighlightComboBoxChange" class="sapUiSmallMarginEnd">
+								<core:Item key="NONE" text="No Highlighting"/>
+								<core:Item key="WO_PREDECESSORS" text="Highlight Activities without Predecessors"/>
+								<core:Item key="WO_SUCCESSORS" text="Highlight Activities without Successors"/>
+								<core:Item key="BY_TYPE" text="Highlight Activities by Type"/>
+								<core:Item key="WITH_DELAYS" text="Highlight Activities with Delays"/>
+								<core:Item key="ADVANCED" text="Advanced Highlighting"/>
+							</ComboBox>
+						</Toolbar>
+						
+						<List id="operationsList" items="{operations>/}" visible="false">
+							<items>
+								<StandardListItem title="{operations>MaintenanceOrder}" description="{operations>MaintenanceOrderOperation}"/>
+							</items>
+						</List>
+						<graph:Graph 
+							enableWheelZoom="false" 
+							nodes="{graphicsData>/nodes}" 
+							id="graph2" 
+							visible="false" 
+							lines="{graphicsData>/lines}" 
+							lineSelectionChange=".onGraphSelectionChange"
+							selectionMode="Single">
+							<graph:nodes>
+								<graph:Node key="{graphicsData>key}" title="{graphicsData>title}" shape="Box" attributes="{graphicsData>attributes}" showCoordinates="true"
+									headerCheckIcon="sap-icon://accept" status="Success" statusColor="{graphicsData>statusColor}" width="420px" press=".onNodePress">
+									<graph:attributes>
+										<graph:ElementAttribute label="{graphicsData>label}" value="{graphicsData>value}"/>
+									</graph:attributes>
+								</graph:Node>
+							</graph:nodes>
+							<graph:lines>
+								<graph:Line from="{graphicsData>from}" to="{graphicsData>to}" title="{graphicsData>type}"
+									lineType="{ path: 'graphicsData>type', formatter: '.formatLineType' }" arrowOrientation="ParentOf" press=".onLinePress" selected="false"
+									arrowStart="None" arrowEnd="Arrow" arrowPosition="End" lineColor="{ path: 'graphicsData>type', formatter: '.formatLineColor' }"
+									lineWidth="2">
+									<graph:customData>
+										<core:CustomData key="relationshipType" value="{graphicsData>type}"/>
+									</graph:customData>
+								</graph:Line>
+							</graph:lines>
+						</graph:Graph>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

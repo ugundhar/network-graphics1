@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mvc:View controllerName="com.odata.odata.controller.LineDetail" xmlns="sap.uxap" xmlns:m="sap.m" xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true" isChildPage="true" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="Relationship Details" wrapping="true"/>
+				</expandedHeading>
+				<snappedHeading>
+					<m:Title text="Relationship Details" wrapping="true"/>
+				</snappedHeading>
+				<actions>
+					<m:Button text="Close" type="Transparent" press=".onCloseDetailPress"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="From Operation"/>
+					<m:Text text="{lineDetail>/fromOp}" class="sapUiSmallMarginTop"/>
+				</m:VBox>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="To Operation"/>
+					<m:Text text="{lineDetail>/toOp}" class="sapUiSmallMarginTop"/>
+				</m:VBox>
+				<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
+					<m:Label text="Relationship Type"/>
+					<m:Text text="{lineDetail>/typeMapped}" class="sapUiSmallMarginTop"/>
+				</m:VBox>
+			</m:FlexBox>
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="RELATIONSHIP INFORMATION">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0"
+								emptySpanM="0" columnsL="1" columnsM="1">
+								<form:content>
+									<m:Label text="Relationship Type"/>
+									<m:Text text="{lineDetail>/typeMapped}"/>
+									<m:Label text="Line Style"/>
+									<m:Text text="{lineDetail>/lineTypeFormatted}"/>
+									<m:Label text="Line Color"/>
+									<m:Text text="{lineDetail>/lineColorFormatted}"/>
+									<m:Label text="Arrow Position"/>
+									<m:Text text="End"/>
+									<m:Label text="Arrow Orientation"/>
+									<m:Text text="ParentOf"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>

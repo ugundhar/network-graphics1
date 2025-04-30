@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='ER9CLNT001')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1"/></edmx:Reference>
+	<edmx:Reference Uri="../../../sap/ps_network_graph_srv/$metadata"><edmx:Include Namespace="PS_NETWORK_GRAPH_SRV" Alias="SAP"/></edmx:Reference>
+	<edmx:DataServices>
+		<Schema Namespace="ps_network_graph_anno_mdl.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphBasicDataType/ProjectNetwork">
+				<Annotation Term="UI.DataFieldDefault">
+					<Record Type="UI.DataField"><PropertyValue Property="Label" String="Network"/><PropertyValue Property="Value" Path="ProjectNetwork"/></Record>
+				</Annotation><Annotation Term="Common.SemanticObject" String="ProjectNetwork"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphBasicDataType/WBSElementExternalID">
+				<Annotation Term="UI.DataFieldDefault">
+					<Record Type="UI.DataField"><PropertyValue Property="Label" String="WBS Element"/><PropertyValue Property="Value" Path="WBSElementExternalID"/></Record>
+				</Annotation><Annotation Term="Common.SemanticObject" String="WBSElement"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphBasicDataType/ProjectExternalID">
+				<Annotation Term="UI.DataFieldDefault">
+					<Record Type="UI.DataField"><PropertyValue Property="Label" String="Project Definition"/><PropertyValue Property="Value" Path="ProjectExternalID"/></Record>
+				</Annotation><Annotation Term="Common.SemanticObject" String="Project"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphBasicDataType/NetworkActivityObject"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphBasicDataType">
+				<Annotation Term="UI.DataPoint" Qualifier="ProjectExternalID">
+					<Record><PropertyValue Property="Value" Path="ProjectExternalID"/><PropertyValue Property="Title" String="Project Definition"/><PropertyValue Property="Description" String="Project Definition"/></Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="WBSElementExternalID">
+					<Record><PropertyValue Property="Value" Path="WBSElementExternalID"/><PropertyValue Property="Title" String="WBS Element"/><PropertyValue Property="Description" String="WBS Element"/></Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>ProjectExternalID</PropertyPath>
+						<PropertyPath>WBSElementExternalID</PropertyPath>
+						<PropertyPath>ProjectNetwork</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/SchedldBasicEarliestStartDate"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/SchedldBasicEarliestEndDate"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/SchedldBasicLatestStartDate"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/ScheduledBasicLatestEndDate"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/SchedldFcstdEarliestStartDate"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/SchedldFcstdEarliestEndDate"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/LatestSchedldFcstdStartDate"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/LatestSchedldFcstdEndDate"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/ActualStartDate"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/ActualEndDate"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/BasicDatesFreeFloat"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/ForecastedDatesFreeFloat"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/TotalFloatForBasicDates"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/TotalFloatForForecastedDates"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/FreeDefinedDate1"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/FreeDefinedDate2"><Annotation Term="Common.IsDayOfCalendarMonth"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/NetworkActivityObject"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/ProjectNetwork"><Annotation Term="Common.SemanticObject" String="ProjectNetwork"/>
+				<Annotation Term="Common.Text" Path="ProjectNetworkDescription"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/NetworkActivity"><Annotation Term="Common.SemanticObject" String="NetworkActivity"/>
+				<Annotation Term="Common.Text" Path="NetworkActivityDescription"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType/WBSElementExternalID"><Annotation Term="Common.SemanticObject" String="WBSElement"/>
+				<Annotation Term="Common.Text" Path="WBSDescription"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_NtwkActivityGraphOverviewType">
+				<Annotation Term="UI.FieldGroup" Qualifier="@Assignments">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="NtwkActivityConfirmationStatus"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="NetworkActivityType"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="NetworkActivityHasSuccessor"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="NetworkActivityHasPredecessor"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="ObjectIsCreated"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="ObjectIsPartiallyConfirmed"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="ObjectIsConfirmed"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="UserStatusShortName"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="SystemStatusName"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="OverdueToEndDays"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="OverdueToStartDays"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="DueToEndDays"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="DueToStartDays"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="CostCtrActivityTypeName"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="WorkCenter"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="Plant"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="TotalFloatForForecastedDates"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="TotalFloatForBasicDates"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="ForecastedDatesFreeFloat"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="Assignments"/><PropertyValue Property="Value" Path="BasicDatesFreeFloat"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="@UserFields">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedDate2"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedDate1"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedAmount2"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedAmount1"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedQuantity2"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedQuantity1"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedIndicator2"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedIndicator1"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedAttribute04"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedAttribute03"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedAttribute02"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedAttribute01"/></Record>
+								<Record Type="UI.DataField"><PropertyValue Property="Label" String="User Fields"/><PropertyValue Property="Value" Path="FreeDefinedTableFieldSemantic"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_ProjectNetworkGraphOverviewType/ProjectNetwork"><Annotation Term="Common.SemanticObject" String="ProjectNetwork"/>
+				<Annotation Term="Common.Text" Path="ProjectNetworkDescription"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_ProjectNetworkGraphOverviewType/WBSElementExternalID"><Annotation Term="Common.SemanticObject" String="WBSElement"/>
+				<Annotation Term="Common.Text" Path="WBSDescription"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/></Annotation>
+			</Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.C_WBSElementGraphOverviewType/WBSElementExternalID"><Annotation Term="Common.SemanticObject" String="WBSElement"/>
+				<Annotation Term="Common.Text" Path="WBSDescription"><Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/></Annotation>
+			</Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_CostCenterStdVHType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="ControllingArea"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+						<Record Type="UI.DataField"><PropertyValue Property="Value" Path="CostCenter"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_NetworkActivityValueHelpType/NetworkActivityCategory"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_NetworkActivityValueHelpType/WorkCenter"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_NetworkActivityValueHelpType/Plant"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_NetworkActivityValueHelpType/FreeDefinedAttribute01"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_NetworkActivityValueHelpType/FreeDefinedAttribute02"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_NetworkActivityValueHelpType/FreeDefinedAttribute04"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_NetworkActivityValueHelpType/FreeDefinedAttribute03"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_NetworkActivityValueHelpType/FreeDefinedIndicator1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_NetworkActivityValueHelpType/FreeDefinedIndicator2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_ProjectWithCodingMaskVHType/ApplicantCode"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_ProjectWithCodingMaskVHType/ProfitCenter"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_ProjectWithCodingMaskVHType/ControllingArea"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/ProjectType"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/ControllingArea"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/RespCostCenterControllingArea"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/ResponsibleCostCenter"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/ProfitCenter"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/FreeDefinedAttribute01"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/FreeDefinedAttribute02"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/FreeDefinedAttribute03"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/FreeDefinedAttribute04"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/FreeDefinedIndicator1"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="PS_NETWORK_GRAPH_SRV.I_WBSElementWithCodingMaskVHType/FreeDefinedIndicator2"><Annotation Term="UI.Hidden"/></Annotations>
+			<Annotations Target="_Entities">
+				<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+					<Record Type="Org.OData.Capabilities.V1.BatchSupportType"><PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/></Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
